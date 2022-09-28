@@ -1,0 +1,77 @@
+
+// --------------------------
+// VARIABLES
+// --------------------------
+$maincolor: violet;
+$contrastcolor: black;
+
+@mixin violet-text-black-bg {
+  color: $contrastcolor;
+  background-color: $maincolor;
+}
+
+@mixin black-test-violet-bg {
+  color: $maincolor;
+  background-color: $contrastcolor;
+}
+
+// --------------------------
+// Header
+// --------------------------
+
+nav {
+  @include violet-text-black-bg;
+  display: flex;
+  justify-content: flex-start;
+
+  a {
+    @include violet-text-black-bg;
+    div {
+      margin: 10px;
+      font-size: large;
+    }
+  }
+}
+
+// --------------------------
+// Form
+// --------------------------
+
+section,
+div {
+  form {
+    input {
+      @include violet-text-black-bg;
+      padding: 10px;
+      font-size: 1.1em;
+      margin: 10px;
+
+      &[type="submit"]:hover {
+        @include black-test-violet-bg;
+      }
+    }
+  }
+}
+
+// --------------------------
+// button
+// --------------------------
+
+button#delete {
+  @include violet-text-black-bg;
+  display: block;
+  margin: auto;
+  font-size: 1.3em;
+  padding: 10px;
+}
+
+// --------------------------
+// images
+// --------------------------
+
+img {
+  width: 300px;
+  height: 300px;
+  border-radius: 90px;
+  object-fit: cover;
+}
